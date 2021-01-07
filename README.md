@@ -6,7 +6,7 @@ I need some refractors as used at [Original]https://github.com/NeVeSpl/CodeRefac
 2. [shorten the property text](#ShortenThePropertyText)
 3. [keep the DataAnnotations](#KeepTheDataAnnotations)
 
-### <a name="ConvertToFullPrismWpfProperty"></a>1. Convert To full Prism Proptery
+### <a name="ConvertToFullPrismWpfProperty"></a>1. Convert To full prism property
 From
 ```C#
       public string SomeProperty { get; set; }  
@@ -65,7 +65,7 @@ To
 ```
 But at now, it does't work
 
-### <a name="KeepTheDataAnnotations"></a>2. keep the DataAnnotations
+### <a name="KeepTheDataAnnotations"></a>2. keep the data annotations
 
 From
 ```C#
