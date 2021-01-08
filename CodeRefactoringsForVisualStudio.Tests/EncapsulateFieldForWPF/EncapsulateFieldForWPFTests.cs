@@ -1,10 +1,6 @@
-﻿using System.IO;
-using System.Reflection;
-using EncapsulateFieldForWPF;
-using CodeRefactoringsForVisualStudio.Tests;
+﻿using EncapsulateFieldForWPF;
 using Microsoft.CodeAnalysis.CodeRefactorings;
 using NUnit.Framework;
-using RoslynNUnitLight;
 
 namespace CodeRefactoringsForVisualStudio.Tests.EncapsulateFieldForWPF
 {

@@ -5,6 +5,8 @@ I need some refractors as used at [Original]https://github.com/NeVeSpl/CodeRefac
 1. [work with SetProperty from Prism](#ConvertToFullPrismWpfProperty)
 2. [shorten the property text](#ShortenThePropertyText)
 3. [keep the DataAnnotations](#KeepTheDataAnnotations)
+4. use the notation stored in Visual Studio for the private variables
+
 
 ### <a name="ConvertToFullPrismWpfProperty"></a>1. Convert To full prism property
 From

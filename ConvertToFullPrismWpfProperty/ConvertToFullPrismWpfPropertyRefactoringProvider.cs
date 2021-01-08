@@ -10,12 +10,12 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Editing;
 
-namespace ConvertToFullWPFProperty
+namespace ConvertToFullPrismWpfProperty
 {
     [ExportCodeRefactoringProvider(LanguageNames.CSharp, Name = nameof(ConvertToFullPrismWpfPropertyRefactoringProvider)), Shared]
     public class ConvertToFullPrismWpfPropertyRefactoringProvider : CodeRefactoringProvider
     {
-     
+
         public sealed override async Task ComputeRefactoringsAsync(CodeRefactoringContext context)
         {
             SyntaxNode rootNode = await context.Document.GetSyntaxRootAsync(context.CancellationToken).ConfigureAwait(false);
@@ -27,7 +27,7 @@ namespace ConvertToFullWPFProperty
                 context.RegisterRefactoring(action);
             }
         }
-      
+
 
         private async Task<Document> ConvertToFullPrismWpfProperty(Document document, IEnumerable<PropertyDeclarationSyntax> selectedAutoPropertyDeclarationSyntaxes, CancellationToken cancellationToken)
         {
@@ -43,8 +43,8 @@ namespace ConvertToFullWPFProperty
             char? backingFiledPrefix = typeSymbol.DetermineBackingFiledPrefix();
 
             cancellationToken.ThrowIfCancellationRequested();
-            
-            SyntaxNode newTypeNode = typeNode.ReplaceNodes(selectedAutoPropertyDeclarationSyntaxes, (x, _) => CreateFullProperty(x, backingFiledPrefix, methodNameToNotifyThatPropertyWasChanged, syntaxGenerator));            
+
+            SyntaxNode newTypeNode = typeNode.ReplaceNodes(selectedAutoPropertyDeclarationSyntaxes, (x, _) => CreateFullProperty(x, backingFiledPrefix, methodNameToNotifyThatPropertyWasChanged, syntaxGenerator));
 
             cancellationToken.ThrowIfCancellationRequested();
 
@@ -52,7 +52,7 @@ namespace ConvertToFullWPFProperty
             newTypeNode = InsertCreatedBackingFields(newTypeNode, createdBackingFields);
 
             cancellationToken.ThrowIfCancellationRequested();
-            
+
             Document newDocument = await CreateNewDocument(document, typeNode, newTypeNode, cancellationToken).ConfigureAwait(false);
             return newDocument;
         }
@@ -68,7 +68,7 @@ namespace ConvertToFullWPFProperty
         {
             var createdBackingFields = new List<SyntaxNode>();
 
-            foreach(PropertyDeclarationSyntax property in properties)
+            foreach (PropertyDeclarationSyntax property in properties)
             {
                 string propertyName = property.Identifier.ValueText;
                 string fieldName = FieldNameGenerator.Generate(propertyName, backingFiledPrefix);

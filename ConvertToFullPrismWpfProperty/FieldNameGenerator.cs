@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ConvertToFullWPFProperty
+namespace ConvertToFullPrismWpfProperty
 {
     public static class FieldNameGenerator
     {
@@ -13,7 +13,7 @@ namespace ConvertToFullWPFProperty
             if (!string.IsNullOrWhiteSpace(name))
             {
                 if (prefix.HasValue)
-                {                   
+                {
                     if (char.IsLetter(prefix.Value))
                     {
                         result = prefix.Value.ToString() + char.ToUpper(name[0]) + name.Substring(1);
@@ -21,7 +21,7 @@ namespace ConvertToFullWPFProperty
                     else
                     {
                         result = prefix.Value.ToString() + char.ToLower(name[0]) + name.Substring(1);
-                    }                   
+                    }
                 }
                 else
                 {

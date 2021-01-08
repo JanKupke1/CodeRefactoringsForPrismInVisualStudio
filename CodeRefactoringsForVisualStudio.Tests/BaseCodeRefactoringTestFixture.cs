@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using RoslynNUnitLight;
+using RoslynTestKit;
 using System.IO;
 using System.Reflection;
 

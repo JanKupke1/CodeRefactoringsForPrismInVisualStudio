@@ -7,6 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="ConfertToFullPrismWpfProperty\Data\ShouldCreateFullProperty.cs" />
+    <Compile Remove="ConfertToFullPrismWpfProperty\Data\ShouldCreateFullProperty_expected.cs" />
     <Compile Remove="EncapsulateFieldForWPF\Data\Class1.cs" />
     <Compile Remove="EncapsulateFieldForWPF\Data\Class1_expected.cs" />
     <Compile Remove="EncapsulateFieldForWPF\Data\ShouldEncapsulateFieldWhenCursorIsInTheMiddle.cs" />
@@ -40,6 +42,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="ConfertToFullPrismWpfProperty\Data\ShouldCreateFullProperty.cs" />
+    <EmbeddedResource Include="ConfertToFullPrismWpfProperty\Data\ShouldCreateFullProperty_expected.cs" />
     <EmbeddedResource Include="EncapsulateFieldForWPF\Data\ShouldEncapsulateFieldWhenCursorIsOnTypeName.cs" />
     <EmbeddedResource Include="EncapsulateFieldForWPF\Data\ShouldEncapsulateFieldWhenCursorIsOnIdentifier.cs" />
     <EmbeddedResource Include="EncapsulateFieldForWPF\Data\ShouldEncapsulateFieldWhenCursorIsInTheMiddle.cs" />
@@ -72,13 +76,14 @@
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="3.8.0" />
     <PackageReference Include="Microsoft.CodeAnalysis.VisualBasic.Workspaces" Version="3.8.0" />
     <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.Common" Version="3.8.0" />
-    <PackageReference Include="nunit" Version="3.12.0" />
+    <PackageReference Include="nunit" Version="3.13.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.17.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.3" />
-    <PackageReference Include="RoslynNUnitLight.NetStandard" Version="1.2.5" />
+    <PackageReference Include="SmartAnalyzers.RoslynTestKit" Version="3.0.61" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ConvertToFullPrismWpfProperty\ConvertToFullPrismWpfProperty.csproj" />
     <ProjectReference Include="..\ConvertToFullWPFProperty\ConvertToFullWPFProperty.csproj" />
     <ProjectReference Include="..\EncapsulateFieldForWPF\EncapsulateFieldForWPF.csproj" />
     <ProjectReference Include="..\InvertAssignmentDirection\InvertAssignmentDirection.csproj" />
